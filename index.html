@@ -7,72 +7,109 @@
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 </head>
-
 <body class="light">
 
 <header>
-    <nav class="navbar">
-        <div class="logo">Farheen's Marriage Consultancy</div>
-        <ul class="nav-links">
-            <li><a href="about.html">About</a></li>
-            <li><a href="packages.html">Packages</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <button id="modeToggle" class="toggle">🌞</button>
-    </nav>
+  <nav class="navbar">
+    <div class="logo">Farheen's Marriage Consultancy</div>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="packages.html">Packages</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button id="modeToggle" class="toggle">🌞</button>
+  </nav>
 </header>
 
 <section class="hero">
-    <h1>Find Your Perfect Match</h1>
-    <p>Graceful, personalised, and trusted matchmaking</p>
+  <h1>Find Your Perfect Match</h1>
+  <p class="tagline"><span id="changingText">Elegant Connections</span></p>
+  <div class="hero-tags">
+    <span>Free Sessions</span>
+    <span>Student Friendly</span>
+    <span>Planned 2026</span>
+  </div>
 </section>
 
 <section class="features">
-    <div class="feature-card scroll-left">
-        <h3>Trusted Matches</h3>
-        <p>Verified profiles with complete family assurance.</p>
-    </div>
-
-    <div class="feature-card scroll-right">
-        <h3>Personal Guidance</h3>
-        <p>Support and consultation based on your values.</p>
-    </div>
-
-    <div class="feature-card scroll-left">
-        <h3>Complete Privacy</h3>
-        <p>Your information stays confidential and protected.</p>
-    </div>
+  <div class="feature-card scroll-left">
+    <h3>Trusted Matches</h3>
+    <p>We connect families and individuals with verified profiles and complete assurance.</p>
+  </div>
+  <div class="feature-card scroll-right">
+    <h3>Personalised Guidance</h3>
+    <p>Each client receives advice tailored to their values and preferences.</p>
+  </div>
+  <div class="feature-card scroll-left">
+    <h3>Complete Privacy</h3>
+    <p>All personal information is handled confidentially with care.</p>
+  </div>
 </section>
 
+<section class="gradient-divider"></section>
+
+<section class="roadmap">
+  <h2>How Our Service Works</h2>
+  <div class="steps">
+    <div class="step">
+      <h3>1. Consultation</h3>
+      <p>We understand your preferences and expectations.</p>
+    </div>
+    <div class="step">
+      <h3>2. Profile Matching</h3>
+      <p>We select the best matches based on your values.</p>
+    </div>
+    <div class="step">
+      <h3>3. Introduction</h3>
+      <p>We arrange a private introduction with proper guidance.</p>
+    </div>
+    <div class="step">
+      <h3>4. Follow Up</h3>
+      <p>We support both parties until satisfaction is achieved.</p>
+    </div>
+  </div>
+</section>
+
+<button class="help-button">💬</button>
+
+<footer>
+  <p>Farheen's Marriage Consultancy</p>
+  <p>Trusted family matchmaking based in Pakistan</p>
+  <p>&copy; 2025 All Rights Reserved</p>
+</footer>
+
 <script>
-// dark light toggle
+// dark/light mode toggle
 const toggle = document.getElementById("modeToggle");
 const body = document.body;
-
 toggle.addEventListener("click", () => {
-    if(body.classList.contains("light")) {
-        body.classList.replace("light","dark");
-        toggle.textContent = "🌙";
-    } else {
-        body.classList.replace("dark","light");
-        toggle.textContent = "🌞";
-    }
+  if(body.classList.contains("light")){
+    body.classList.replace("light","dark");
+    toggle.textContent = "🌙";
+  } else {
+    body.classList.replace("dark","light");
+    toggle.textContent = "🌞";
+  }
 });
 
-// scroll animation
-const elements = document.querySelectorAll(".scroll-left, .scroll-right");
+// rotating tagline
+const phrases = ["Elegant Connections","Trusted Guidance","Perfect Matches"];
+let index = 0;
+const textEl = document.getElementById("changingText");
+setInterval(() => {
+  index = (index+1) % phrases.length;
+  textEl.textContent = phrases[index];
+}, 2500);
 
-function checkScroll() {
-    elements.forEach(el => {
-        const pos = el.getBoundingClientRect().top;
-        if(pos < window.innerHeight - 100){
-            el.classList.add("show");
-        }
-    });
-}
-
-window.addEventListener("scroll", checkScroll);
-checkScroll();
+// scroll animations
+const scrollElements = document.querySelectorAll('.scroll-left, .scroll-right, .step');
+const elementInView = (el, offset=100) => el.getBoundingClientRect().top <= window.innerHeight - offset;
+const displayScrollElement = (el) => el.classList.add('show');
+const handleScrollAnimation = () => {
+  scrollElements.forEach(el => { if(elementInView(el,150)) displayScrollElement(el); });
+};
+window.addEventListener('scroll', handleScrollAnimation);
+handleScrollAnimation();
 </script>
 
 </body>
