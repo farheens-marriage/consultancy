@@ -244,20 +244,20 @@ body.dark footer { background:rgba(35,25,15,0.8); color:#f5d06b; }
   .steps { padding-left:25px; }
   .nav-links { gap:15px; flex-wrap:wrap; }
 }
-/* === About / Contact Sections Box Styling === */
+/* About / Contact Sections Box Styling */
 .section {
-  max-width: 900px;
-  margin: 50px auto;
-  padding: 35px 30px;
-  background: rgba(255,192,203,0.25); /* light mode box */
-  border-radius: 20px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
-  line-height: 1.7;
-  font-size: 1.05rem;
+  max-width: 900px;         /* limits width for readability */
+  margin: 60px auto;        /* top/bottom spacing and center alignment */
+  padding: 40px 35px;       /* inner spacing for text */
+  background: rgba(255,192,203,0.25); /* soft pink box for light mode */
+  border-radius: 20px;      /* rounded corners for elegance */
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1); /* subtle shadow */
+  line-height: 1.8;         /* spacing between lines for readability */
+  font-size: 1.1rem;        /* slightly larger text for comfort */
   transition: 0.3s;
 }
 
-/* Dark mode box styling */
+/* Dark mode for About/Contact boxes */
 body.dark .section {
   background: linear-gradient(135deg, rgba(80,60,10,0.6), rgba(120,90,20,0.7));
   color: #f5d06b;
@@ -267,15 +267,15 @@ body.dark .section {
 /* Section headings */
 .section h2 {
   font-size: 2rem;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   text-align: center;
   font-weight: 700;
   letter-spacing: 0.5px;
 }
 
-/* Paragraphs */
+/* Paragraphs inside sections */
 .section p {
-  margin-bottom: 15px;
+  margin-bottom: 18px;
 }
 
 /* Links inside sections */
@@ -293,9 +293,17 @@ body.dark .section a {
   opacity: 0.8;
 }
 
-/* Responsive adjustments */
+/* Responsive adjustments for mobile */
 @media(max-width:700px){
-  .section { width:90%; padding:25px 20px; margin:40px auto; }
-  .section h2 { font-size:1.7rem; }
-  .section p { font-size:1rem; }
+  .section {
+    width:90%;
+    padding:30px 20px;
+    margin:40px auto;
+  }
+  .section h2 {
+    font-size:1.7rem;
+  }
+  .section p {
+    font-size:1rem;
+  }
 }
