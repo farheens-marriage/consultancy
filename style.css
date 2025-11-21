@@ -246,39 +246,39 @@ body.dark footer { background:rgba(35,25,15,0.8); color:#f5d06b; }
 }
 /* About / Contact Sections Box Styling */
 .section {
-  max-width: 900px;         /* limits width for readability */
-  margin: 60px auto;        /* top/bottom spacing and center alignment */
-  padding: 40px 35px;       /* inner spacing for text */
-  background: rgba(255,192,203,0.25); /* soft pink box for light mode */
-  border-radius: 20px;      /* rounded corners for elegance */
-  box-shadow: 0 12px 30px rgba(0,0,0,0.1); /* subtle shadow */
-  line-height: 1.8;         /* spacing between lines for readability */
-  font-size: 1.1rem;        /* slightly larger text for comfort */
+  max-width: 900px;              /* limits width for readability */
+  margin: 80px auto;             /* big top/bottom margin, centered */
+  padding: 60px 50px;            /* lots of inner space for comfort */
+  background: rgba(255,192,203,0.25); /* soft pink for light mode */
+  border-radius: 25px;           /* smooth rounded corners */
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15); /* subtle depth */
+  line-height: 1.8;              /* spacing between lines */
+  font-size: 1.1rem;             /* slightly larger text */
   transition: 0.3s;
 }
 
-/* Dark mode for About/Contact boxes */
+/* Dark mode */
 body.dark .section {
   background: linear-gradient(135deg, rgba(80,60,10,0.6), rgba(120,90,20,0.7));
   color: #f5d06b;
-  box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
 }
 
 /* Section headings */
 .section h2 {
   font-size: 2rem;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
   text-align: center;
   font-weight: 700;
   letter-spacing: 0.5px;
 }
 
-/* Paragraphs inside sections */
+/* Paragraphs */
 .section p {
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
-/* Links inside sections */
+/* Links */
 .section a {
   color: #d64f8b;
   text-decoration: underline;
@@ -293,17 +293,13 @@ body.dark .section a {
   opacity: 0.8;
 }
 
-/* Responsive adjustments for mobile */
+/* Responsive adjustments */
 @media(max-width:700px){
   .section {
-    width:90%;
-    padding:30px 20px;
-    margin:40px auto;
+    width: 90%;
+    padding: 40px 25px;          /* keep padding comfortable on mobile */
+    margin: 60px auto;
   }
-  .section h2 {
-    font-size:1.7rem;
-  }
-  .section p {
-    font-size:1rem;
-  }
+  .section h2 { font-size: 1.7rem; }
+  .section p { font-size: 1rem; }
 }
