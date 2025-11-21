@@ -59,7 +59,7 @@ body.dark {
 /* Hero */
 .hero {
     height: 80vh;
-    background: url('images/muslimmarriage.jpeg') center/cover fixed no-repeat;
+    background: url('images/muslimflower.jpg') center/cover fixed no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -158,4 +158,38 @@ body.dark .card .price {
     .card {
         width: 90%;
     }
+}
+/* Feature cards on homepage */
+.features {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.feature-card {
+    background: rgba(255,255,255,0.9);
+    padding: 30px;
+    border-radius: 15px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 1s ease-out;
+}
+.feature-card.scroll-right { transform: translateX(50px); }
+.feature-card.scrolled { opacity: 1; transform: translateX(0); }
+.feature-card h3 { font-size: 1.8em; margin-bottom: 15px; }
+.feature-card p { font-size: 1.1em; }
+
+/* Dark mode for feature cards */
+body.dark .feature-card { background: rgba(20,20,20,0.85); color: #f2d78a; }
+
+/* Responsive */
+@media (max-width: 650px) {
+    .feature-card { width: 90%; }
 }

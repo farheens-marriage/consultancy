@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Farheen's Marriage Consultancy</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Farheen's Marriage Consultancy</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body class="light">
 
@@ -13,86 +13,62 @@
     <nav class="navbar">
         <div class="logo">Farheen's Marriage Consultancy</div>
         <ul class="nav-links">
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#packages">Packages</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="packages.html">Packages</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
         <button id="modeToggle">🌞</button>
     </nav>
 </header>
 
-<section id="hero" class="hero">
+<section class="hero">
     <div class="hero-overlay">
         <h1>Helping You Find the Perfect Match</h1>
         <p>Elegant, personalised, and trusted matchmaking services</p>
     </div>
 </section>
 
-<section id="about" class="section scroll-left">
-    <h2>About Us</h2>
-    <p>Farheen's Marriage Consultancy provides professional desi matchmaking with privacy, respect, and personal care. We help families and individuals find meaningful matches based on values, compatibility, and culture.</p>
-</section>
-
-<section id="packages" class="section scroll-right">
-    <h2>Our Packages</h2>
-    <div class="package-cards">
-        <div class="card">
-            <h3>Basic</h3>
-            <p>Simple matchmaking assistance and profile consultation.</p>
-            <p class="price">PKR 5,000</p>
-        </div>
-        <div class="card">
-            <h3>Premium</h3>
-            <p>Full matchmaking, profile verification, and personalised support.</p>
-            <p class="price">PKR 10,000</p>
-        </div>
-        <div class="card">
-            <h3>Exclusive</h3>
-            <p>All Premium features plus VIP consultation and premium promotion.</p>
-            <p class="price">PKR 20,000</p>
-        </div>
+<section class="section features">
+    <div class="feature-card scroll-left">
+        <h3>Trusted Matches</h3>
+        <p>We connect families and individuals with carefully verified profiles.</p>
+    </div>
+    <div class="feature-card scroll-right">
+        <h3>Personalised Consultations</h3>
+        <p>Each client receives guidance tailored to their preferences and values.</p>
+    </div>
+    <div class="feature-card scroll-left">
+        <h3>Privacy Guaranteed</h3>
+        <p>All personal information is handled with the utmost confidentiality.</p>
     </div>
 </section>
 
-<section id="contact" class="section scroll-left">
-    <h2>Contact Us</h2>
-    <p>Reach us via WhatsApp, phone, or email. You can also fill a contact form to schedule a consultation.</p>
-</section>
-
 <script>
-    const toggle = document.getElementById("modeToggle");
-    const body = document.body;
+const toggle = document.getElementById("modeToggle");
+const body = document.body;
+toggle.addEventListener("click", () => {
+    if(body.classList.contains("light")) {
+        body.classList.remove("light");
+        body.classList.add("dark");
+        toggle.textContent = "🌙";
+    } else {
+        body.classList.remove("dark");
+        body.classList.add("light");
+        toggle.textContent = "🌞";
+    }
+});
 
-    toggle.addEventListener("click", () => {
-        if(body.classList.contains("light")) {
-            body.classList.remove("light");
-            body.classList.add("dark");
-            toggle.textContent = "🌙";
-        } else {
-            body.classList.remove("dark");
-            body.classList.add("light");
-            toggle.textContent = "🌞";
-        }
-    });
-
-    // Scroll reveal animation
-    const scrollElements = document.querySelectorAll('.scroll-left, .scroll-right');
-    const elementInView = (el, offset = 100) => {
-        const elementTop = el.getBoundingClientRect().top;
-        return (
-            elementTop <= (window.innerHeight || document.documentElement.clientHeight) - offset
-        );
-    };
-    const displayScrollElement = (element) => {
-        element.classList.add('scrolled');
-    };
-    const handleScrollAnimation = () => {
-        scrollElements.forEach(el => {
-            if(elementInView(el, 150)) displayScrollElement(el);
-        });
-    };
-    window.addEventListener('scroll', handleScrollAnimation);
+// Scroll reveal animation
+const scrollElements = document.querySelectorAll('.scroll-left, .scroll-right');
+const elementInView = (el, offset = 100) => {
+    const elementTop = el.getBoundingClientRect().top;
+    return (elementTop <= window.innerHeight - offset);
+};
+const displayScrollElement = (element) => { element.classList.add('scrolled'); };
+const handleScrollAnimation = () => {
+    scrollElements.forEach(el => { if(elementInView(el,150)) displayScrollElement(el); });
+};
+window.addEventListener('scroll', handleScrollAnimation);
 </script>
 
 </body>
