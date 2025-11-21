@@ -1,95 +1,183 @@
-/* Light mode: pink and silver */
+/* ---------------- Font ---------------- */
+body, h1, h2, h3, p, a, button {
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ---------------- Light Mode ---------------- */
 body.light {
-    background: #fce8f1;
-    color: #444;
+    background: #fdf0f5;
+    color: #4b3a4d;
 }
-
 body.light .navbar {
-    background: #fff;
-    border-bottom: 1px solid #ccc;
+    background: #fff0f8;
+    border-bottom: 2px solid #d1c4d6;
 }
-
-body.light .hero {
-    background: #f7d6e4;
+body.light .navbar .nav-links a {
+    color: #4b3a4d;
 }
-
-body.light h2 {
+body.light .navbar .nav-links a:hover {
     color: #b30059;
 }
+body.light #modeToggle {
+    background: #bfa3c9;
+    color: #4b3a4d;
+}
 
-/* Dark mode: black and gold */
+/* ---------------- Dark Mode ---------------- */
 body.dark {
     background: #0e0e0e;
     color: #f2d78a;
 }
-
 body.dark .navbar {
     background: #1a1a1a;
-    border-bottom: 1px solid #d1b45b;
+    border-bottom: 2px solid #d1b45b;
 }
-
-body.dark .hero {
-    background: #141414;
+body.dark .navbar .nav-links a {
+    color: #f2d78a;
 }
-
-body.dark h2 {
+body.dark .navbar .nav-links a:hover {
     color: #f5d06b;
 }
-
-/* General styling */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+body.dark #modeToggle {
+    background: #d1b45b;
+    color: #0e0e0e;
 }
 
+/* ---------------- Navbar ---------------- */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
+    padding: 20px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
-
-.logo {
-    font-size: 17px;
-    letter-spacing: 1px;
-    font-weight: 600;
+.navbar .logo {
+    font-size: 22px;
+    font-weight: 700;
 }
-
-.nav-links {
+.navbar .nav-links {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 25px;
 }
-
-.nav-links a {
+.navbar .nav-links a {
     text-decoration: none;
-    color: inherit;
-    font-size: 15px;
+    font-weight: 500;
+    transition: 0.3s;
 }
-
 #modeToggle {
-    padding: 6px 12px;
-    cursor: pointer;
-    border: none;
+    padding: 6px 14px;
     border-radius: 6px;
-    background: #cccccc;
-    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
 }
 
+/* ---------------- Hero ---------------- */
 .hero {
-    padding: 70px 20px;
+    position: relative;
+    height: 80vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
 }
-
-.section {
-    padding: 50px 20px;
+.hero-overlay {
+    background: rgba(0,0,0,0.35);
+    padding: 50px 30px;
+    border-radius: 15px;
+    color: #fff;
+    animation: fadeIn 2s ease-in-out;
+}
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+.hero p {
+    font-size: 1.5em;
+}
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(30px);}
+    to {opacity: 1; transform: translateY(0);}
 }
 
-/* Mobile */
+/* ---------------- Sections ---------------- */
+.section {
+    padding: 60px 20px;
+    text-align: center;
+}
+.section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* ---------------- Package Cards ---------------- */
+.package-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+.card {
+    background: rgba(255,255,255,0.9);
+    border-radius: 15px;
+    padding: 25px;
+    width: 250px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+.card p {
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+.card .price {
+    font-weight: 700;
+    font-size: 1.2em;
+    color: #b30059;
+}
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
+body.dark .card {
+    background: rgba(20,20,20,0.85);
+    color: #f2d78a;
+}
+body.dark .card .price {
+    color: #f5d06b;
+}
+
+/* ---------------- Responsive ---------------- */
 @media (max-width: 650px) {
     .nav-links {
-        display: none;
+        display: none; /* optional: can add hamburger menu later */
+    }
+    .hero h1 {
+        font-size: 2em;
+    }
+    .hero p {
+        font-size: 1.2em;
+    }
+    .package-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    .card {
+        width: 90%;
     }
 }
