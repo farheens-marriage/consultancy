@@ -43,30 +43,7 @@
   <p>&copy; 2025 All Rights Reserved</p>
 </footer>
 
-<script>
-// Dark/light mode toggle
-const toggle = document.getElementById("modeToggle");
-const body = document.body;
-toggle.addEventListener("click", () => {
-  if(body.classList.contains("light")){
-    body.classList.replace("light","dark");
-    toggle.textContent = "🌙";
-  } else {
-    body.classList.replace("dark","light");
-    toggle.textContent = "🌞";
-  }
-});
-
-// Scroll animation
-const scrollElements = document.querySelectorAll('.scroll-left, .scroll-right');
-const elementInView = (el, offset=100) => el.getBoundingClientRect().top <= window.innerHeight - offset;
-const displayScrollElement = (el) => el.classList.add('show');
-const handleScrollAnimation = () => {
-  scrollElements.forEach(el => { if(elementInView(el,150)) displayScrollElement(el); });
-};
-window.addEventListener('scroll', handleScrollAnimation);
-handleScrollAnimation();
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
