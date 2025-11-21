@@ -244,3 +244,58 @@ body.dark footer { background:rgba(35,25,15,0.8); color:#f5d06b; }
   .steps { padding-left:25px; }
   .nav-links { gap:15px; flex-wrap:wrap; }
 }
+/* === About / Contact Sections Box Styling === */
+.section {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 35px 30px;
+  background: rgba(255,192,203,0.25); /* light mode box */
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+  line-height: 1.7;
+  font-size: 1.05rem;
+  transition: 0.3s;
+}
+
+/* Dark mode box styling */
+body.dark .section {
+  background: linear-gradient(135deg, rgba(80,60,10,0.6), rgba(120,90,20,0.7));
+  color: #f5d06b;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+}
+
+/* Section headings */
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* Paragraphs */
+.section p {
+  margin-bottom: 15px;
+}
+
+/* Links inside sections */
+.section a {
+  color: #d64f8b;
+  text-decoration: underline;
+  transition: 0.3s;
+}
+
+body.dark .section a {
+  color: #ffd86a;
+}
+
+.section a:hover {
+  opacity: 0.8;
+}
+
+/* Responsive adjustments */
+@media(max-width:700px){
+  .section { width:90%; padding:25px 20px; margin:40px auto; }
+  .section h2 { font-size:1.7rem; }
+  .section p { font-size:1rem; }
+}
