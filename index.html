@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body class="light">
 
 <header>
@@ -17,58 +18,61 @@
             <li><a href="packages.html">Packages</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
-        <button id="modeToggle">🌞</button>
+        <button id="modeToggle" class="toggle">🌞</button>
     </nav>
 </header>
 
 <section class="hero">
-    <div class="hero-overlay">
-        <h1>Helping You Find the Perfect Match</h1>
-        <p>Elegant, personalised, and trusted matchmaking services</p>
-    </div>
+    <h1>Find Your Perfect Match</h1>
+    <p>Graceful, personalised, and trusted matchmaking</p>
 </section>
 
-<section class="section features">
+<section class="features">
     <div class="feature-card scroll-left">
         <h3>Trusted Matches</h3>
-        <p>We connect families and individuals with carefully verified profiles.</p>
+        <p>Verified profiles with complete family assurance.</p>
     </div>
+
     <div class="feature-card scroll-right">
-        <h3>Personalised Consultations</h3>
-        <p>Each client receives guidance tailored to their preferences and values.</p>
+        <h3>Personal Guidance</h3>
+        <p>Support and consultation based on your values.</p>
     </div>
+
     <div class="feature-card scroll-left">
-        <h3>Privacy Guaranteed</h3>
-        <p>All personal information is handled with the utmost confidentiality.</p>
+        <h3>Complete Privacy</h3>
+        <p>Your information stays confidential and protected.</p>
     </div>
 </section>
 
 <script>
+// dark light toggle
 const toggle = document.getElementById("modeToggle");
 const body = document.body;
+
 toggle.addEventListener("click", () => {
     if(body.classList.contains("light")) {
-        body.classList.remove("light");
-        body.classList.add("dark");
+        body.classList.replace("light","dark");
         toggle.textContent = "🌙";
     } else {
-        body.classList.remove("dark");
-        body.classList.add("light");
+        body.classList.replace("dark","light");
         toggle.textContent = "🌞";
     }
 });
 
-// Scroll reveal animation
-const scrollElements = document.querySelectorAll('.scroll-left, .scroll-right');
-const elementInView = (el, offset = 100) => {
-    const elementTop = el.getBoundingClientRect().top;
-    return (elementTop <= window.innerHeight - offset);
-};
-const displayScrollElement = (element) => { element.classList.add('scrolled'); };
-const handleScrollAnimation = () => {
-    scrollElements.forEach(el => { if(elementInView(el,150)) displayScrollElement(el); });
-};
-window.addEventListener('scroll', handleScrollAnimation);
+// scroll animation
+const elements = document.querySelectorAll(".scroll-left, .scroll-right");
+
+function checkScroll() {
+    elements.forEach(el => {
+        const pos = el.getBoundingClientRect().top;
+        if(pos < window.innerHeight - 100){
+            el.classList.add("show");
+        }
+    });
+}
+
+window.addEventListener("scroll", checkScroll);
+checkScroll();
 </script>
 
 </body>
