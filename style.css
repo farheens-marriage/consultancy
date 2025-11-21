@@ -1,0 +1,95 @@
+/* Light mode: pink and silver */
+body.light {
+    background: #fce8f1;
+    color: #444;
+}
+
+body.light .navbar {
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+}
+
+body.light .hero {
+    background: #f7d6e4;
+}
+
+body.light h2 {
+    color: #b30059;
+}
+
+/* Dark mode: black and gold */
+body.dark {
+    background: #0e0e0e;
+    color: #f2d78a;
+}
+
+body.dark .navbar {
+    background: #1a1a1a;
+    border-bottom: 1px solid #d1b45b;
+}
+
+body.dark .hero {
+    background: #141414;
+}
+
+body.dark h2 {
+    color: #f5d06b;
+}
+
+/* General styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo {
+    font-size: 17px;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 15px;
+}
+
+#modeToggle {
+    padding: 6px 12px;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    background: #cccccc;
+    font-size: 14px;
+}
+
+.hero {
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.section {
+    padding: 50px 20px;
+}
+
+/* Mobile */
+@media (max-width: 650px) {
+    .nav-links {
+        display: none;
+    }
+}
