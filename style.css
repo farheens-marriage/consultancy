@@ -202,3 +202,46 @@ body.dark footer { background:rgba(35,25,15,0.8); color:#f5d06b; }
   .steps { flex-direction:column; }
   .nav-links { gap:15px; }
 }
+/* Packages Section */
+.packages-section {
+  max-width:1000px;
+  margin:0 auto;
+  padding:60px 20px;
+  text-align:center;
+}
+
+.package-cards {
+  display:flex;
+  flex-direction:column;
+  gap:30px;
+  margin-top:40px;
+}
+
+.card {
+  background: linear-gradient(135deg, rgba(255,192,203,0.3), rgba(255,228,235,0.5));
+  padding:30px;
+  border-radius:15px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.15);
+  opacity:0;
+  transform:translateX(-60px);
+  transition:1s ease;
+}
+
+.scroll-right { transform:translateX(60px); }
+.card.show { opacity:1; transform:translateX(0); }
+
+.card h3 { font-size:1.8rem; margin-bottom:10px; }
+.card p { font-size:1rem; margin-bottom:8px; }
+.card .price { font-weight:700; font-size:1.2rem; margin-top:10px; }
+
+/* Dark mode */
+body.dark .card {
+  background: linear-gradient(135deg, rgba(50,35,10,0.8), rgba(80,60,0,0.7));
+  color:#f5d06b;
+}
+
+/* Responsive */
+@media(max-width:700px){
+  .package-cards { flex-direction:column; }
+  .card { width:90%; margin:0 auto; }
+}

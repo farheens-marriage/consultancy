@@ -1,37 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact - Farheen's Marriage Consultancy</title>
-    <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact - Farheen's Marriage Consultancy</title>
+<link rel="stylesheet" href="style.css" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body class="light">
 
 <header>
-    <nav class="navbar">
-        <div class="logo">Farheen's Marriage Consultancy</div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="packages.html">Packages</a></li>
-        </ul>
-        <button id="modeToggle">Mode</button>
-    </nav>
+  <nav class="navbar">
+    <div class="logo">Farheen's Marriage Consultancy</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="packages.html">Packages</a></li>
+    </ul>
+    <button id="modeToggle" class="toggle">🌞</button>
+  </nav>
 </header>
 
-<section class="section">
-    <h2>Contact Us</h2>
-    <p>Reach us via WhatsApp, phone, or email. You can also fill a contact form to schedule a consultation.</p>
+<section class="contact-section">
+  <h2>Contact Us</h2>
+  <p>You can reach us via WhatsApp, phone, or email. Our contact details are below:</p>
+
+  <div class="contact-info">
+    <p>Email: <a href="mailto:feenzkay@gmail.com">feenzkay@gmail.com</a></p>
+    <p>Phone/WhatsApp: <a href="tel:+923333445032">+92 333 3445032</a></p>
+  </div>
 </section>
 
+<footer>
+  <p>Farheen's Marriage Consultancy</p>
+  <p>Trusted family matchmaking based in Pakistan</p>
+  <p>&copy; 2025 All Rights Reserved</p>
+</footer>
+
 <script>
-    const toggle = document.getElementById("modeToggle")
-    const body = document.body
-    toggle.addEventListener("click", () => {
-        body.classList.toggle("light")
-        body.classList.toggle("dark")
-    })
+// Dark/light mode toggle
+const toggle = document.getElementById("modeToggle");
+const body = document.body;
+toggle.addEventListener("click", () => {
+  if(body.classList.contains("light")){
+    body.classList.replace("light","dark");
+    toggle.textContent = "🌙";
+  } else {
+    body.classList.replace("dark","light");
+    toggle.textContent = "🌞";
+  }
+});
 </script>
+
 </body>
 </html>

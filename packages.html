@@ -1,38 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Packages - Farheen's Marriage Consultancy</title>
-    <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Packages - Farheen's Marriage Consultancy</title>
+<link rel="stylesheet" href="style.css" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body class="light">
 
 <header>
-    <nav class="navbar">
-        <div class="logo">Farheen's Marriage Consultancy</div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <button id="modeToggle">Mode</button>
-    </nav>
+  <nav class="navbar">
+    <div class="logo">Farheen's Marriage Consultancy</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button id="modeToggle" class="toggle">🌞</button>
+  </nav>
 </header>
 
-<section class="section">
-    <h2>Our Packages</h2>
-    <div class="package-cards">
-        <div class="card">
-            <h3>Basic</h3>
-            <p>Simple matchmaking assistance and profile consultation.</p>
-            <p class="price">PKR 5,000</p>
-        </div>
-        <div class="card">
-            <h3>Premium</h3>
-            <p>Full matchmaking, profile verification, and personalised support.</p>
-            <p class="price">PKR 10,000</p>
-        </div>
-        <div class="card">
-            <h3>Exclusive</h3>
-            <p>All Premium features plus VIP consultation and premium promotion.</p>
+<section class="packages-section">
+  <h2>Our Packages</h2>
+  <div class="package-cards">
+    <div class="card scroll-left">
+      <h3>Basic</h3>
+      <p>Simple matchmaking assistance with profile guidance.</p>
+      <p class="price">PKR 5,000</p>
+    </div>
+    <div class="card scroll-right">
+      <h3>Premium</h3>
+      <p>Full matchmaking, profile verification, and personalized support.</p>
+      <p class="price">PKR 10,000</p>
+    </div>
+    <div class="card scroll-left">
+      <h3>Exclusive</h3>
+      <p>All Premium features plus VIP consultation and featured promotion.</p>
+      <p class="price">PKR 15,000</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Farheen's Marriage Consultancy</p>
+  <p>Trusted family matchmaking based in Pakistan</p>
+  <p>&copy; 2025 All Rights Reserved</p>
+</footer>
+
+<script>
+// Dark/light mode toggle
+const toggle = document.getElementById("modeToggle");
+const body = document.body;
+toggle.addEventListener("click", () => {
+  if(body.classList.contains("light")){
+    body.classList.replace("light","dark");
+    toggle.textContent = "🌙";
+  } else {
+    body.classList.replace("dark","light");
+    toggle.textContent = "🌞";
+  }
+});
+
+// Scroll animation
+const scrollElements = document.querySelectorAll('.scroll-left, .scroll-right');
+const elementInView = (el, offset=100) => el.getBoundingClientRect().top <= window.innerHeight - offset;
+const displayScrollElement = (el) => el.classList.add('show');
+const handleScrollAnimation = () => {
+  scrollElements.forEach(el => { if(elementInView(el,150)) displayScrollElement(el); });
+};
+window.addEventListener('scroll', handleScrollAnimation);
+handleScrollAnimation();
+</script>
+
+</body>
+</html>

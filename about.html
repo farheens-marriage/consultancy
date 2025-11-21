@@ -1,28 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About - Farheen's Marriage Consultancy</title>
-    <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About - Farheen's Marriage Consultancy</title>
+<link rel="stylesheet" href="style.css" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body class="light">
 
 <header>
-    <nav class="navbar">
-        <div class="logo">Farheen's Marriage Consultancy</div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="packages.html">Packages</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <button id="modeToggle">Mode</button>
-    </nav>
+  <nav class="navbar">
+    <div class="logo">Farheen's Marriage Consultancy</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="packages.html">Packages</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button id="modeToggle" class="toggle">🌞</button>
+  </nav>
 </header>
 
-<section class="section">
-    <h2>About Us</h2>
-    <p>Farheen's Marriage Consultancy provides professional desi matchmaking with privacy, respect, and personal care. We help families and individuals find meaningful matches based on values, compatibility, and culture.</p>
+<section class="about-section">
+  <h2>About Farheen</h2>
+  <p>With over a decade of dedicated experience in the field of matchmaking, Farheen has become a trusted name in desi matrimonial services. Starting her journey more than 10 years ago, she has personally guided countless families and individuals through one of life’s most significant decisions with compassion, respect, and discretion. Her extensive understanding of cultural values, family dynamics, and personal preferences allows her to create highly compatible matches that are both meaningful and lasting.</p>
+
+  <p>Farheen believes that every match is unique, and she tailors her approach to the individual needs of her clients. She combines traditional matchmaking values with modern methods, ensuring both privacy and efficiency. Over the years, she has built a vast network of verified profiles, making her consultancy one of the most reliable and well-regarded in Pakistan.</p>
+
+  <p>Her dedication goes beyond just arranging meetings; Farheen provides thorough consultations, helps families understand compatibility factors, and offers continued support until the match is finalized. She is known for her patience, personalized guidance, and unwavering commitment to her clients’ happiness. Through a careful balance of experience, intuition, and professionalism, Farheen has successfully helped hundreds of families find suitable matches and forge lifelong relationships.</p>
+
+  <p>Choosing Farheen’s Marriage Consultancy means choosing a service backed by over 10 years of expertise, a reputation for trustworthiness, and a deep understanding of what makes relationships thrive in the desi cultural context.</p>
 </section>
 
+<footer>
+  <p>Farheen's Marriage Consultancy</p>
+  <p>Trusted family matchmaking based in Pakistan</p>
+  <p>&copy; 2025 All Rights Reserved</p>
+</footer>
+
 <script>
+// Dark/light mode toggle
+const toggle = document.getElementById("modeToggle");
+const body = document.body;
+toggle.addEventListener("click", () => {
+  if(body.classList.contains("light")){
+    body.classList.replace("light","dark");
+    toggle.textContent = "🌙";
+  } else {
+    body.classList.replace("dark","light");
+    toggle.textContent = "🌞";
+  }
+});
+</script>
+
+</body>
+</html>
