@@ -1,4 +1,4 @@
-/* ---------------- Font ---------------- */
+/* Font */
 body, h1, h2, h3, p, a, button {
     font-family: 'Playfair Display', serif;
     margin: 0;
@@ -6,51 +6,24 @@ body, h1, h2, h3, p, a, button {
     box-sizing: border-box;
 }
 
-/* ---------------- Light Mode ---------------- */
+/* Light mode */
 body.light {
     background: #fdf0f5;
     color: #4b3a4d;
 }
-body.light .navbar {
-    background: #fff0f8;
-    border-bottom: 2px solid #d1c4d6;
-}
-body.light .navbar .nav-links a {
-    color: #4b3a4d;
-}
-body.light .navbar .nav-links a:hover {
-    color: #b30059;
-}
-body.light #modeToggle {
-    background: #bfa3c9;
-    color: #4b3a4d;
-}
 
-/* ---------------- Dark Mode ---------------- */
+/* Dark mode */
 body.dark {
     background: #0e0e0e;
     color: #f2d78a;
 }
-body.dark .navbar {
-    background: #1a1a1a;
-    border-bottom: 2px solid #d1b45b;
-}
-body.dark .navbar .nav-links a {
-    color: #f2d78a;
-}
-body.dark .navbar .nav-links a:hover {
-    color: #f5d06b;
-}
-body.dark #modeToggle {
-    background: #d1b45b;
-    color: #0e0e0e;
-}
 
-/* ---------------- Navbar ---------------- */
+/* Navbar */
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start; /* left aligned */
     align-items: center;
+    gap: 40px;
     padding: 20px 30px;
     position: sticky;
     top: 0;
@@ -71,21 +44,22 @@ body.dark #modeToggle {
     font-weight: 500;
     transition: 0.3s;
 }
+.navbar .nav-links a:hover {
+    color: #b30059;
+}
 #modeToggle {
-    padding: 6px 14px;
+    margin-left: auto;
+    padding: 6px 12px;
     border-radius: 6px;
     border: none;
     cursor: pointer;
-    font-weight: 500;
+    font-size: 1.2em;
 }
 
-/* ---------------- Hero ---------------- */
+/* Hero */
 .hero {
-    position: relative;
     height: 80vh;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background: url('images/muslimmarriage.jpeg') center/cover fixed no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -96,7 +70,6 @@ body.dark #modeToggle {
     padding: 50px 30px;
     border-radius: 15px;
     color: #fff;
-    animation: fadeIn 2s ease-in-out;
 }
 .hero h1 {
     font-size: 3em;
@@ -105,22 +78,25 @@ body.dark #modeToggle {
 .hero p {
     font-size: 1.5em;
 }
-@keyframes fadeIn {
-    from {opacity: 0; transform: translateY(30px);}
-    to {opacity: 1; transform: translateY(0);}
-}
 
-/* ---------------- Sections ---------------- */
+/* Sections */
 .section {
     padding: 60px 20px;
-    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 1s ease-out;
 }
-.section h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
+.section.scroll-right {
+    transform: translateX(50px);
+}
+.section.scrolled {
+    opacity: 1;
+    transform: translateX(0);
 }
 
-/* ---------------- Package Cards ---------------- */
+/* Package Cards */
 .package-cards {
     display: flex;
     flex-wrap: wrap;
@@ -162,10 +138,12 @@ body.dark .card .price {
     color: #f5d06b;
 }
 
-/* ---------------- Responsive ---------------- */
+/* Responsive */
 @media (max-width: 650px) {
-    .nav-links {
-        display: none; /* optional: can add hamburger menu later */
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
     }
     .hero h1 {
         font-size: 2em;
